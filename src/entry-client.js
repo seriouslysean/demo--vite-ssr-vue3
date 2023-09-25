@@ -1,5 +1,5 @@
-import { getUppercaseMessage } from '@/utils.js';
+import { createApp } from '@/main.js';
 
-window.addEventListener('load', () => {
-    console.log(getUppercaseMessage('Mounted!'));
-});
+const { app } = createApp();
+
+app.mount('#app');

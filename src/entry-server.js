@@ -1,6 +1,12 @@
-import { getUppercaseMessage } from '@/utils.js';
+import { renderToString } from 'vue/server-renderer';
 
-export function render(context) {
-    console.log(context);
-    return getUppercaseMessage('Hello, entry server!');
+import { createApp } from '@/main.js';
+
+export const render = async (context) => {
+  const { app } = createApp(context);
+  const html = await renderToString(app);
+
+  return {
+    html,
+  };
 };

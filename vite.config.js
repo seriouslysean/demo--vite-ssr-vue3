@@ -1,6 +1,8 @@
 const { resolve } = require('path');
 const { defineConfig } = require('vite');
 
+const vue = require('@vitejs/plugin-vue');
+
 const root = resolve(__dirname);
 
 module.exports = defineConfig({
@@ -10,6 +12,7 @@ module.exports = defineConfig({
             '@': resolve(root, 'src'),
         },
     },
+    plugins: [vue()],
     server: { middlewareMode: true },
     appType: 'custom',
 });
